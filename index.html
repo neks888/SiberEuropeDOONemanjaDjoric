@@ -12,8 +12,7 @@
       const arr2 = [2, 7, 12, 63];
       const arr3 = [10, 13, 14, 42];
 
-      function GetNext(...arro) {
-        const arr = arro.flat();
+      function GetNext(arr) {
         const solutionArr = [];
         for (let i = 0; i < arr.length; i++) {
           for (let j = arr[i]; j < arr[i + 1]; j++) {
@@ -24,10 +23,10 @@
             }
           }
         }
-        return new Set(solutionArr);
+        return solutionArr;
       }
 
-      console.log(GetNext(arr1, arr2, arr3));
+      console.log(new Set(GetNext(arr1), GetNext(arr2), GetNext(arr3)));
     </script>
   </body>
 </html>
