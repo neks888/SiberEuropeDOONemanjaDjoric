@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const arr1 = [1, 8, 15, 16, 35];
+      const arr2 = [2, 7, 12, 63];
+      const arr3 = [10, 13, 14, 42];
+
+      function GetNext(...arro) {
+        const arr = arro.flat();
+        const solutionArr = [];
+        for (let i = 0; i < arr.length; i++) {
+          for (let j = arr[i]; j < arr[i + 1]; j++) {
+            if (j % 2 === 0 || j % 3 === 0) {
+              continue;
+            } else {
+              solutionArr.push(j);
+            }
+          }
+        }
+        return new Set(solutionArr);
+      }
+
+      console.log(GetNext(arr1, arr2, arr3));
+    </script>
+  </body>
+</html>
